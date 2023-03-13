@@ -1,0 +1,16 @@
+{
+    "name": "suivle-boilerplate",
+    "description": "Boilerplate for Suivle",
+    "version": "0.0.0-alpha.2",
+    "main": "src/index.ts",
+    "scripts": {
+        "dev": "bun run src/index.ts"
+    },
+    "dependencies": {
+        "suivle": "latest"
+    },
+    "devDependencies": {
+        "bun-types": "latest",
+        "typescript": "latest"
+    }
+}
