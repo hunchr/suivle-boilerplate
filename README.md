@@ -3,19 +3,22 @@ Documentation and boilerplate for [Suivle](https://github.com/hunchr/suivle) (pr
 
 ## Documentation
 ### Folder Structure
+The folder structure (src) MUST look like this:\
+<img width="128" src="https://raw.githubusercontent.com/hunchr/suivle/main/docs/img/folder-structure.png" alt="Folder Structure">
+
 #### Public Folder (```./src/public/```)
 * For static files
-* Files are served at http://localhost:4000/*path/to/file*
+* Files are served at http://localhost:4000/path/to/file
 * Only files indexed at server start are served (i.e. not for user content => CDN)
 
 #### Models Folder (```./src/models/```)
 * For REST-API
 * Files MUST have an [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) before the file extension (e.g. filename.get.ts)
-* Served at http://localhost:4000/api/*path/to/file*
+* Served at http://localhost:4000/api/path/to/file
 
 #### Views Folder (```./src/views/```)
 * For HTML
-* Served at http://localhost:4000/*path/to/file* (same as public folder)
+* Served at http://localhost:4000/path/to/file (same as public folder)
 
 ### Main File
 The ```./src/index.ts``` file should look like this:
@@ -44,7 +47,7 @@ const app = new Suivle({
 * Params must be in brackets (i.e. *[* and *]*)
 * RegExp to parse params can be configured in the main file
 
-Example: To parse the username from the request *http://localhost:4000/@octocat*, you can create a file named ```./src/views/@[username].ts``` and place the RegExp to match the params in the *params* key:
+Example: To parse the username from the request http://localhost:4000/@octocat, you can create a file named ```./src/views/@[username].ts``` and place the RegExp to match the params in the *params* key:
 ```ts
 const app = new Suivle({
     params: /@[a-z-]+/g
