@@ -2,16 +2,16 @@
 // GET: http://localhost:4000/api/@octocat/posts/12345
 import { Handler } from 'suivle'
 
-export const handle = async ($: Handler) => {
-    const postId = $.getParam('postId')
+export default ({ json, param, qparam }: Handler) => {
+    const postId = param('postId')
     
     if (postId !== '1234') {
-        return 404
+        return json(null, 404)
     }
     
-    return {
-        username: $.getParam('username'),
+    return json({
+        username: param('username'),
         postId: postId,
-        sort: $.getSearchParam('sort')
-    }
+        sort: qparam('sort')
+    })
 }

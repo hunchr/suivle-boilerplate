@@ -7,6 +7,12 @@ const app = new Suivle({
     // host: 'localhost',
     // port: 4000,
     // params: /(?<=\/\W)[a-z-]+|(?<=\/)\d+/g,
+    // jsonHeaders: {
+    //     'X-Powered-By': 'Suivle'
+    // },
+    // htmlHeaders: {
+    //     'Content-Security-Policy': 'default-src \'self\';'
+    // },
     globals: {
         version: '1.0.0'
     }
